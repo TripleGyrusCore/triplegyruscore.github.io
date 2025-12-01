@@ -57,11 +57,16 @@
             outline: 3px solid #009;
             outline-offset: 2px;
         }
+        
+        .header-logo {
+            height: 1.5em;
+            width: auto;
+        }
 
         /* Handle tiny screens */
         @media (max-width: 480px) {
             h1 { font-size: 1em; }
-            .big-screen { display: none; }
+            .header-logo { height: 1em; }
         }
 
         /* Respect user preferences */
@@ -85,7 +90,7 @@
 </head>
 <body>
     <header style="display: flex; gap: 0.5em; align-items: center">
-        <img src="logo.png" alt="Triple Gyrus Core logo: 3 white spirals on a purple background flowing left to right" style="height: 1.5em; width: auto"/>
+        <img src="logo.png" alt="Triple Gyrus Core logo: 3 white spirals on a purple background flowing left to right" class="header-logo"/>
         <h1>Triple Gyrus Core</h1>
     </header>
     <main>
