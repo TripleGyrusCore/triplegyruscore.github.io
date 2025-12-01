@@ -16,27 +16,34 @@
             line-height: 1.5;
         }
 
+       html, body {
+           height: 100%;
+           overflow: hidden;
+       }
+
         body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
             padding: 0;
             color: #111;
             background-color: #eee;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         a { color: #111; }
 
-        header, footer {
-            padding: 20px;
-        }
+        header, footer { padding: 1em; }
 
         main {
             flex: 1;
-            display: flex;
-            flex-direction: column;
             padding: 0 20px;
+            width: 100%;
+            box-sizing: border-box;
+            color: #111;
+            background-color: #eee;
+            overflow-y: scroll;
         }
+        main p:not(:first-child) { margin-top: 1em; }
         
         h1 {
             font-size: 1.5em;
@@ -45,35 +52,6 @@
             padding: 0;
         }
 
-        textarea {
-            flex: 1;
-            width: 100%;
-            box-sizing: border-box;
-            color: #111;
-            background-color: #eee;
-            border-width: 10px;
-            border-color: #111;
-            line-height: 1.5;
-            overflow-y: scroll;
-            padding: 10px;
-        }
-
-        button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 24px;
-            background-color: #111;
-            color: #eee;
-            border: 3px solid #111;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #333;
-        }
-        button:active {
-            background-color: #000;
-        }
-        
         /* Enhanced focus indicators for AAA */
         *:focus {
             outline: 3px solid #009;
@@ -83,33 +61,19 @@
         /* Handle tiny screens */
         @media (max-width: 480px) {
             h1 { font-size: 1em; }
+            .big-screen { display: none; }
         }
 
         /* Respect user preferences */
         @media (prefers-color-scheme: dark) {
-            body, textarea {
+            body, main {
                 background-color: #111;
                 color: #eee;
-            }
-            textarea {
-                border-color: #eee;
-                unicode-bidi: plaintext;
             }
             *:focus {
                 outline-color: #CCF;
             }
             a { color: #eee; }
-            button {
-                background-color: #eee;
-                color: #111;
-                border-color: #eee;
-            }
-            button:hover {
-                background-color: #ccc;
-            }
-            button:active {
-                background-color: #fff;
-            }
         }
         @media (prefers-reduced-motion: reduce) {
             * {
@@ -129,7 +93,7 @@
         <p>If you are interested in using Triple Gyrus Core, it is free to use and always will be. If you would like implementation assistance in your workflows or would like to contribute to making Triple Gyrus Core better, please email jsrc.expert@gmail.com.</p>
     </main>
     <footer>
-        <p>&copy; 2025 <a href="https://jsrc.expert">Jessica Reuter Castrogiovanni</a></p>
+        <p>&copy; 2025 Triple Gyrus Core</p>
     </footer>
 </body>
 </html>
